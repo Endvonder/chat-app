@@ -11,6 +11,7 @@ import { NewsComponent } from './news/news.component';
 import { SupportComponent } from './support/support.component';
 import { FbChatComponent } from './fb-chat/fb-chat.component';
 import { SignalRService } from './signalR.service';
+import { FoodComponent } from './food/food.component';
 
 const appRoutes: Routes = [
 
@@ -30,6 +31,10 @@ const appRoutes: Routes = [
   {
     path: 'fb-chat',
     component: FbChatComponent
+  },
+  {
+    path: 'food',
+    component: FoodComponent
   }
 
 
@@ -40,7 +45,8 @@ const appRoutes: Routes = [
     WeatherComponent,
     NewsComponent,
     SupportComponent,
-    FbChatComponent
+    FbChatComponent,
+    FoodComponent
   ],
   imports: [
     BrowserModule,

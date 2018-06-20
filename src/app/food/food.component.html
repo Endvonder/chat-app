@@ -1,0 +1,39 @@
+<div *ngIf="visible">
+  <div class="left-message">
+    <div class="message__text">
+      <div class="message__text__content">
+
+        <b>Please, make some choice:</b>
+
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div (click)="showMessage()" class="food-message" style="padding: 5px;">
+      <img src="../../assets/IMG_4628.jpg" style="width: auto;height:300px;">
+      <p>
+        <b>1$</b>
+      </p>
+    </div>
+    <!-- <div class="food-message" style="padding: 5px;">
+          <img src="../../assets/data-catalog-bizness-lanch-biznes-lanch-549x650.jpg" style="width: 370px;height:300px;">
+        </div> -->
+    <div (click)="showMessage()" class="food-message" style="padding: 5px;">
+      <img src="../../assets/lanch.jpg" style="height:300px;">
+      <p>
+        <b>2$</b>
+      </p>
+    </div>
+  </div>
+</div>
+<div *ngIf="!visible">
+  <div class="left-message">
+    <div class="message__text">
+      <div class="message__text__content">
+
+        <b>Thank you, for your order!</b>
+
+      </div>
+    </div>
+  </div>
+</div>
