@@ -1,50 +1,48 @@
 <div class="container">
-  <div class="top">
-    <div class="title">
-      Chat
+    <div class="top">
+        <div class="title">
+            Chat
+        </div>
     </div>
-  </div>
-  <div class="content">
-    <div class="chat-link-list">
-      <a target="_blank" href="/">
-        <div class="chat-link">
-          <div class="circle-avatar"></div>
-          <div class="name">Client 1</div>
-          <div class="tchat-text">Hello</div>
-        </div>
-      </a>
-      <a target="_blank" href="/">
-        <div class="chat-link">
-          <div class="circle-avatar"></div>
-          <div class="name">Client 2</div>
-          <div class="tchat-text">Hello</div>
-        </div>
-      </a>
+    <div class="content">
+        <div class="chat-link-list">
+            <a routerLink="/weather">
+                <div class="chat-link">
+                    <div class="circle-weather-avatar"></div>
+                    <div class="name">Weather</div>
+                    <div class="tchat-text">Hello</div>
+                </div>
+            </a>
+            <a routerLink="/news">
+                <div class="chat-link">
+                    <div class="circle-news-avatar"></div>
+                    <div class="name">News</div>
+                    <div class="tchat-text">Hello</div>
+                </div>
+            </a>
 
-      <a target="_blank" href="/">
-        <div class="chat-link">
-          <div class="circle-avatar"></div>
-          <div class="name">Client 3</div>
-          <div class="tchat-text">Hello</div>
+            <a routerLink="/support">
+                <div class="chat-link">
+                    <div class="circle-support-avatar"></div>
+                    <div class="name">Support</div>
+                    <div class="tchat-text">Hello</div>
+                </div>
+            </a>
+            <a target="_blank" href="/">
+                <div class="chat-link">
+                    <div class="circle-avatar"></div>
+                    <div class="name">Client 4</div>
+                    <div class="tchat-text">Hello</div>
+                </div>
+            </a>
+
+
         </div>
-      </a>
-      <a target="_blank" href="/">
-        <div class="chat-link">
-          <div class="circle-avatar"></div>
-          <div class="name">Client 4</div>
-          <div class="tchat-text">Hello</div>
+        <div class="chat-body">
+            <router-outlet>
+            </router-outlet>
         </div>
-      </a>
-      
 
     </div>
-    <div class="chat-body">
-      <div>
-        <input type="text" />
-      </div>
-
-    </div>
-
-  </div>
 
 </div>

@@ -6,6 +6,7 @@ html, body {
 .content {
   height: 100%;
   display: flex;
+  width: 100%;
 }
 
 .container {
@@ -68,13 +69,39 @@ html, body {
   color: grey;
 }
 
+.circle-weather-avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  float: left;
+  background-image: url(../assets/Weather.GIF);
+}
+.circle-news-avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  float: left;
+  background-image: url(../assets/news-logo.png);
+}
+
+.circle-support-avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  float: left;
+  background-image: url(../assets/LiveSupport.JPG);
+}
+
 .circle-avatar {
   border-radius: 50%;
   width: 50px;
   height: 50px;
   margin: 10px;
   float: left;
-  background-color: green;
+  background-color:green;
 }
 
 .chat-body {
@@ -83,14 +110,17 @@ html, body {
   flex-direction: row;
   height: 100%;
   flex-wrap: wrap;
-  width: 80%;
-}
+  width: 100%;
+  box-sizing: border-box;
+  
+  /*overflow-y: scroll; */
+  }
 
 .chat-link-list {
   width: 20%;
   overflow-y: scroll;
   background: #fff;
-  min-width: 220px;
+  min-width: 200px;
   flex-direction: row;
   height: 100%;
 }
@@ -100,12 +130,4 @@ html, body {
     display: block;
   }
 
-input {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: -webkit-fill-available;
-  height: 30px;
-  border: aliceblue;
-  padding: 5px;
-}
+
