@@ -49,6 +49,7 @@ html, body {
 .name {
   height: 50%;
   margin-left: 5px;
+  line-height: 42px;
   font-size: 14px;
   margin-top: 15px;
   width: calc(100% - 80px);

@@ -5,4 +5,5 @@ export class Weather {
     public temp: string;
     public tempMin: string;
     public tempMax: string;
+    public city: string;
 }

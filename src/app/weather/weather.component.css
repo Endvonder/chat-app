@@ -75,6 +75,7 @@ input {
   padding-left: 10px;
   padding-right: 10px;
   z-index: 2;
+  font-size: 14px;
 }
 
 .message__image,

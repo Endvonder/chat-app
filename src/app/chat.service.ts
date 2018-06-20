@@ -8,7 +8,7 @@ export class ChatService {
   constructor(private http: Http) { }
 
   getWeather(city: string) {
-    const endpoint = 'http://localhost:60268/api/media/WeatherForecasts/?city=Kyiv';
+    const endpoint = `http://localhost:60268/api/media/WeatherForecasts/?city=${city}`;
     return this.http.get(endpoint)//, {search: searchParams})
   }
 }

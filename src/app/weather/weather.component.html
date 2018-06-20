@@ -1,21 +1,32 @@
 <div class="messages">
     <div #scrollMe style="padding: 10px;margin-bottom: 30px;height: 100%; overflow-y: scroll;">
-        <div class="left-message">
-            <div class="message__text">
-                <div class="message__text__content">Enter name of the city- Ex: London
-                    <div class="message__time">{{date}}</div>
+        <div *ngFor="let item of weathers">
+            <div class="left-message" *ngIf='weatherVisibility'>
+                <div class="message__text">
+                    <div class="message__text__content">
+                        <div>Wheater in <b>{{item.city}}</b>
+                            -{{item.dateFormatted}}</div>
+                        <img *ngIf="item.description=='clear sky'" src="../../assets/01d.png" />
+
+                        <div>
+                            Max temperature is: <b>{{item.tempMax}}</b>
+                        </div>
+                        <div>
+                            Min temperature is: <b>{{item.tempMin}}</b>
+                        </div>
+                        <div align="right" class="message__time">{{date}}</div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="weather-block" *ngIf='weatherVisibility'>
-            <div *ngFor="let weather of weathers" class="container">
+        <!-- <div class="weather-block">
+            <div class="container">
                 <div class="right-message">
                     <div class="message__text">
                         <div class="message__text__content">
-                            {{weather.tempMin}}
+
                             <div class="message__time">
-                                {{date}}
+
                             </div>
                         </div>
                     </div>
@@ -26,7 +37,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="footer">
         <input #city (keyup.enter)="getWeather(city.value); city.value=''" placeholder="Enter city">
