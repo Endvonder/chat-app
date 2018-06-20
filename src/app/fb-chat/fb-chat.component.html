@@ -1,6 +1,6 @@
 <div class="messages">
-  <div #scrollMe style="padding: 10px;margin-bottom: 30px;height: 100%; overflow-y: scroll;">
-      <!-- <div class="left-message">
+    <div #scrollMe style="padding: 10px;margin-bottom: 30px;height: 100%; overflow-y: scroll;">
+        <!-- <div class="left-message">
           <div class="message__text">
               <div class="message__text__content">
                   Enter name of the city- Ex: London
@@ -9,27 +9,27 @@
           </div>
       </div> -->
 
-      <div class="weather-block">
-          <div *ngFor="let message of allMessages" class="container">
-              <div [class.right-message]="message.isOwn" [class.left-message]="message.isOwn" >
-                  <div class="message__text">
-                      <div class="message__text__content">
-                         {{message.message}}
-                          <div class="message__time">
-                              date
-                          </div>
-                      </div>
-                  </div>
+        <div class="weather-block">
+            <div *ngFor="let message of allMessages" class="container">
+                <div [ngClass]="{'right-message': message.isOwn, 'left-message': message.isOwn}">
+                    <div class="message__text">
+                        <div class="message__text__content">
+                            {{message.message}}
+                            <div class="message__time">
+                                {{date}}
+                            </div>
+                        </div>
+                    </div>
 
-              </div>
+                </div>
 
-              <div class="triangle-down-left">
+                <div class="triangle-down-left">
 
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="footer">
-      <input #message (keyup.enter)="sendMessage(message.value); message.value=''">
-  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <input #message (keyup.enter)="sendMessage(message.value); message.value=''">
+    </div>
 </div>

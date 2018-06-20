@@ -6,13 +6,22 @@ import { CONFIGURATION } from './shared/app.constants';
 
 @Injectable()
 export class SignalRService {
+  private static instance: SignalRService;
+
   foodchanged = new Subject();
   messageReceived = new Subject<ChatMessage>();
   newCpuValue = new Subject<Number>();
   connectionEstablished = new Subject<Boolean>();
   private hubConnection: HubConnection;
 
-  constructor() {
+  public static get getInstance() {
+    if (this.instance === null || this.instance === undefined) {
+      this.instance = new SignalRService();
+    }
+    return this.instance;
+  }
+
+  private constructor() {
     this.createConnection();
     this.registerOnServerEvents();
     this.startConnection();

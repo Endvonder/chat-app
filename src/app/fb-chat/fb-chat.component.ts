@@ -1,4 +1,4 @@
-import { Component, NgZone } from '@angular/core';
+import { Component, NgZone, AfterViewChecked, ElementRef, ViewChild } from '@angular/core';
 import { SignalRService } from '../signalR.service';
 import { ChatMessage } from '../models/chatMessage.model';
 
@@ -7,10 +7,23 @@ import { ChatMessage } from '../models/chatMessage.model';
   templateUrl: './fb-chat.component.html',
   styleUrls: ['./fb-chat.component.css']
 })
-export class FbChatComponent {
+export class FbChatComponent implements AfterViewChecked {
+  @ViewChild('scrollMe') private myScrollContainer: ElementRef;
+
+  ngAfterViewChecked(): void {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom(): void {
+    try {
+      this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    } catch (err) { }
+  }
+
   currentMessage: ChatMessage;
   allMessages: ChatMessage[];
   canSendMessage: boolean;
+  date: string;
 
   constructor(private _signalRService: SignalRService,
     private _ngZone: NgZone) {
@@ -19,12 +32,15 @@ export class FbChatComponent {
     this.allMessages = [];
   }
 
-  sendMessage(message:string) {
+  sendMessage(message: string) {
     if (this.canSendMessage) {
       this.currentMessage.sent = new Date();
       this.currentMessage.message = message;
-      this.allMessages.push(this.currentMessage);      
-      this._signalRService.sendChatMessage(this.currentMessage);
+      this.currentMessage.isOwn = true;
+      const time = new Date;
+      this.date = time.getHours() + ":" + time.getMinutes()
+      this.allMessages.push(this.currentMessage);
+      SignalRService.getInstance.sendChatMessage(this.currentMessage);
       this.currentMessage = new ChatMessage();
     }
   }
