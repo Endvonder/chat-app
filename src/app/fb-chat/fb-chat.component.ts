@@ -19,10 +19,13 @@ export class FbChatComponent {
     this.allMessages = [];
   }
 
-  sendMessage() {
+  sendMessage(message:string) {
     if (this.canSendMessage) {
       this.currentMessage.sent = new Date();
+      this.currentMessage.message = message;
+      this.allMessages.push(this.currentMessage);      
       this._signalRService.sendChatMessage(this.currentMessage);
+      this.currentMessage = new ChatMessage();
     }
   }
 

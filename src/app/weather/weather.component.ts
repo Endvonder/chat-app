@@ -19,7 +19,6 @@ export class WeatherComponent implements OnInit, AfterViewChecked {
   scrollToBottom(): void {
     try {
       this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-      console.log(this.myScrollContainer.nativeElement.scrollTop);
     } catch (err) { }
   }
 
