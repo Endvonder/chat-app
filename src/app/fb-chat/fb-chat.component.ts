@@ -54,7 +54,7 @@ export class FbChatComponent implements AfterViewChecked {
       this._ngZone.run(() => {
         this.currentMessage = new ChatMessage();
         this.allMessages.push(
-          new ChatMessage(message.message, message.sent.toString())
+          new ChatMessage(message.message)
         );
       });
     });
