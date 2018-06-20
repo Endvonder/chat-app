@@ -5,7 +5,8 @@ import { ChatMessage } from '../models/chatMessage.model';
 @Component({
   selector: 'app-fb-chat',
   templateUrl: './fb-chat.component.html',
-  styleUrls: ['./fb-chat.component.css']
+  styleUrls: ['./fb-chat.component.css'],
+  providers: [SignalRService]
 })
 export class FbChatComponent implements AfterViewChecked {
   @ViewChild('scrollMe') private myScrollContainer: ElementRef;
@@ -40,7 +41,7 @@ export class FbChatComponent implements AfterViewChecked {
       const time = new Date;
       this.date = time.getHours() + ":" + time.getMinutes()
       this.allMessages.push(this.currentMessage);
-      SignalRService.getInstance.sendChatMessage(this.currentMessage);
+      this._signalRService.sendChatMessage(this.currentMessage);
       this.currentMessage = new ChatMessage();
     }
   }
