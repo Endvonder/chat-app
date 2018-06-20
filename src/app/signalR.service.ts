@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
-import * as signalR from '@aspnet/signalr';
 import { ChatMessage } from './models/chatMessage.model';
 import { CONFIGURATION } from './shared/app.constants';
 
