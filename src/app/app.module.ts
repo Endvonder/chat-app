@@ -9,6 +9,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsComponent } from './news/news.component';
 import { SupportComponent } from './support/support.component';
+import { FbChatComponent } from './fb-chat/fb-chat.component';
 
 const appRoutes: Routes = [
 
@@ -24,6 +25,10 @@ const appRoutes: Routes = [
   {
     path: 'news',
     component: NewsComponent
+  },
+  {
+    path: 'fb-chat',
+    component: FbChatComponent
   }
 
 
@@ -33,7 +38,8 @@ const appRoutes: Routes = [
     AppComponent,
     WeatherComponent,
     NewsComponent,
-    SupportComponent
+    SupportComponent,
+    FbChatComponent
   ],
   imports: [
     BrowserModule,
