@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewsComponent } from './news/news.component';
 import { SupportComponent } from './support/support.component';
 import { FbChatComponent } from './fb-chat/fb-chat.component';
+import { SignalRService } from './signalR.service';
 
 const appRoutes: Routes = [
 
@@ -48,7 +49,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule
   ],
-  providers: [ChatService],
+  providers: [ChatService, SignalRService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
