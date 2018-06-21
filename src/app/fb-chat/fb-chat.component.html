@@ -10,8 +10,8 @@
       </div> -->
 
         <div class="weather-block">
-            <div *ngFor="let message of allMessages" class="container">
-                <div [ngClass]="{'right-message': message.isOwn, 'left-message': message.isOwn}">
+            <div *ngFor="let message of allMessages" [class.container]="message.isOwn" [class.containerfb]="message.isFb">
+                <div [class.right-message]="message.isOwn" [class.left-message]="message.isFb">
                     <div class="message__text">
                         <div class="message__text__content">
                             {{message.message}}
@@ -23,9 +23,9 @@
 
                 </div>
 
-                <div class="triangle-down-left">
+                <!-- <div *ngIf='message.isFb' class="triangle-down-left">
 
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

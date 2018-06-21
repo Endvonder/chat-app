@@ -59,6 +59,11 @@ input {
     display: flex;
 }
 
+.containerfb {
+    align-self: flex-start;
+    display: flex;
+}
+
 .triangle-down-left {
     overflow: hidden;
     align-self: flex-end;

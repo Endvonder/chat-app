@@ -38,6 +38,7 @@ export class FbChatComponent implements AfterViewChecked {
       this.currentMessage.sent = new Date();
       this.currentMessage.message = message;
       this.currentMessage.isOwn = true;
+      this.currentMessage.isFb = false;
       const time = new Date;
       this.date = time.getHours() + ":" + time.getMinutes()
       this.allMessages.push(this.currentMessage);
@@ -54,8 +55,11 @@ export class FbChatComponent implements AfterViewChecked {
     this._signalRService.messageReceived.subscribe((message: ChatMessage) => {
       this._ngZone.run(() => {
         this.currentMessage = new ChatMessage();
+        var chatmsg = new ChatMessage(message.message);
+        chatmsg.isFb = true;
+        chatmsg.isOwn = false;
         this.allMessages.push(
-          new ChatMessage(message.message)
+          chatmsg
         );
       });
     });
