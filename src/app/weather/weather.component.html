@@ -6,7 +6,7 @@
                     <div class="message__text__content">
                         <div>Wheater in <b>{{item.city}}</b>
                             -{{item.dateFormatted}}</div>
-                        <img *ngIf="item.description=='clear sky'" src="../../assets/01d.png" />
+                        <div *ngIf="item.description=='clear sky'" class="banner"></div>
 
                         <div>
                             Max temperature is: <b>{{item.tempMax}}</b>
@@ -14,7 +14,7 @@
                         <div>
                             Min temperature is: <b>{{item.tempMin}}</b>
                         </div>
-                        <div align="right" class="message__time">{{date}}</div>
+                        <!-- <div align="right" class="message__time">{{date}}</div> -->
                     </div>
                 </div>
             </div>

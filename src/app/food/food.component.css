@@ -145,3 +145,20 @@ box-shadow: 0 2px 1px 0 rgba(160,172,182,.5);
 .message__image:hover .message__time {
   opacity: 1;
 }
+
+.banner {
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url('../../assets/IMG_4628.jpg') no-repeat;
+    width: 500px;
+    height:430px;
+      }
+      .banner1 {
+        display: block;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: url('../../assets/lanch.jpg') no-repeat;
+        width: 500px;
+        height:430px;
+          }
