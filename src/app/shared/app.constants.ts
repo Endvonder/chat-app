@@ -1,6 +1,6 @@
 export let CONFIGURATION = {
     baseUrls: {
-      server: 'https://socialmedia5.azurewebsites.net',
+      server: 'https://socialmediachat.azurewebsites.net',
       apiUrl: 'api/'
     }
   };
